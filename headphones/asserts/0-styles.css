@@ -11,6 +11,7 @@ body {
 
 @media screen and (min-width: 60rem) {
   body {
+    width: min(120rem, 85% + 100px);
     background-color: var(--back-color);
     font-family: "Source Sans Pro", sans-serif;
     padding: 1em;
@@ -43,6 +44,9 @@ body {
     color: var(--free_membership);
   }
   #menu {
+    display: none;
+  }
+  #menu label {
     display: none;
   }
   main {
@@ -87,9 +91,8 @@ body {
     letter-spacing: 0.1em;
   }
 }
-@media screen and (min-width: 30rem) and (max-width: 80rem) {
+@media screen and (min-width: 30rem) {
   body {
-    max-width: 80rem;
     background-color: red;
     color: greenyellow;
     padding: 1em;
@@ -99,6 +102,42 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
   }
+  .nav {
+    color: snow;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav ul {
+    list-style-type: none;
+    display: flex;
+  }
+  .nav ul li {
+    margin: 0.2em 0.8em;
+    display: inline-flex;
+    font-size: small;
+  }
+  .nav a {
+    color: var(--button);
+    text-decoration: none;
+  }
+  .nav ul a:hover {
+    color: var(--free_membership);
+  }
+}
+@media screen and (min-width: 30rem) and (min-width: 768px) {
+  menu {
+    display: none;
+  }
+  .label {
+    display: none;
+  }
+  .label #menu {
+    display: none;
+  }
+}
+@media screen and (min-width: 30rem) {
   main {
     display: flex;
     flex-direction: column;
@@ -109,12 +148,15 @@ body {
     align-items: center;
   }
   main h1 {
+    display: inline-flex;
     font-size: xx-large;
-    padding: 0px;
+    padding: 20px;
+    min-width: 30rem;
   }
   main h2 {
     font-size: large;
     padding: 5px;
+    min-width: 30rem;
   }
   main button {
     color: var(--text-color);
@@ -141,52 +183,65 @@ body {
     letter-spacing: 0.1em;
   }
 }
-@media (max-width: 60rem) {
-  .nav {
+@media screen and (min-width: 48rem) {
+  body {
+    background-color: var(--back-color);
+    font-family: "Source Sans Pro", sans-serif;
+    padding: 1em;
+    margin: 1em 2em;
+    background-image: url(/images/headphones_hero_1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  nav {
+    color: snow;
     display: flex;
     flex-direction: row;
-    margin-left: 0;
-    margin-right: 0;
+    align-items: center;
+    justify-content: space-between;
   }
-  .nav ul {
+  nav ul {
+    list-style-type: none;
+    display: flex;
+  }
+  nav ul li {
+    margin: 0.3em 1em;
+    display: inline-flex;
+  }
+  nav a {
+    color: var(--button);
+    text-decoration: none;
+  }
+  nav ul a:hover {
+    color: var(--free_membership);
+  }
+  .label_menu {
     display: block;
   }
-  .nav ul:last-child {
-    width: 100%;
+  .label_menu #menu {
+    display: block;
   }
-  .nav ul:last-child ul li {
-    margin-bottom: 0;
-    width: 100%;
-    text-align: right;
-    padding: 0.5em;
-  }
-  .nav ul:last-child #menu {
-    display: none;
-  }
-  .nav ul a:hover {
-    color: var(--free_membership);
-    transition: all;
-    transition-duration: 0.9ms;
-  }
-  .nav main {
+  .label_menu main {
     display: flex;
     flex-direction: column;
-    margin: 50px;
-    margin-top: 80px;
+    color: var(--text-color);
+    margin: 200px;
+    margin-top: 350px;
     align-items: center;
   }
-  .nav main h1 {
+  .label_menu main h1 {
     font-size: xx-large;
     padding: 0px;
   }
-  .nav main h2 {
+  .label_menu main h2 {
     font-size: large;
     padding: 5px;
   }
-  .nav main button {
+  .label_menu main button {
     color: var(--text-color);
     padding: 10px;
-    margin: 100px;
+    margin: 60px;
     margin-right: 20px;
     padding-right: 20px;
     background-color: var(--button);
@@ -195,98 +250,65 @@ body {
     width: 150px;
     text-align: center;
   }
-  .nav main button:hover {
+  .label_menu main button:hover {
     background-color: rgb(234, 234, 243);
     color: var(--button);
+    box-shadow: hsl(0, 20%, 96%);
     opacity: 0.9;
   }
-  .nav main p {
-    font-family: Georgia, "Times New Roman", Times, serif;
+  .label_menu main p {
+    font-family: "Source Sans Pro", sans-serif;
     align-items: center;
     text-align: center;
     width: 630px;
     letter-spacing: 0.1em;
-    color: aqua;
   }
 }
-@media screen and (min-width: 20rem) and (max-width: 30rem) {
+@media screen and (min-width: 20rem) and (max-width: 48rem) {
   body {
-    max-width: 30rem;
-    background-color: rgb(98, 255, 0);
-    color: rgb(168, 25, 229);
+    background-color: var(--back-color);
+    font-family: "Source Sans Pro", sans-serif;
     padding: 1em;
     margin: 1em 2em;
     background-image: url(/images/headphones_hero_1.jpg);
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
     background-repeat: no-repeat;
   }
-  nav {
+  .nav {
     display: flex;
-    flex-direction: column-reverse;
-    flex-wrap: wrap;
-    margin-left: 0;
-    margin-right: 0;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
   }
-  nav ul {
-    display: block;
-  }
-  nav ul:last-child {
-    width: 100%;
-    flex-basis: 100%;
-  }
-  nav ul li {
+  .nav .logo {
     display: flex;
-    flex-direction: column-reverse;
-    margin-bottom: 0;
-    width: 100%;
-    text-align: right;
-    padding: 0.5em;
+    flex-direction: row-reverse;
+    width: 100px;
   }
-  nav label {
-    text-align: right;
+  .nav .menu-icon {
     display: block;
-    padding: 0.5em;
-    line-height: 1.6em;
-    align-self: center;
+    cursor: pointer;
   }
-  input[type=checkbox]:not(:checked) + ul {
+  .nav ul {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--free_membership);
+    padding: 1em;
   }
-  main {
-    color: var(--text-color);
-    margin: 200px;
-    margin-top: 350px;
-    align-items: center;
+  .nav ul li {
+    margin-bottom: 0.5em;
   }
-  main h1 {
-    font-size: xx-large;
-    padding: 0px;
-  }
-  main h2 {
-    font-size: large;
-    padding: 5px;
-  }
-  main button {
-    color: var(--text-color);
+  .nav ul li a {
+    font-size: small;
     padding: 10px;
-    margin: 60px;
-    margin-right: 100px;
-    padding-right: 20px;
-    background-color: rgb(168, 25, 229);
-    border: 2px solid var(--button);
-    border-radius: 30px;
-    width: 150px;
-    text-align: center;
-    opacity: 0.9;
   }
-  main p {
-    font-family: "Source Sans Pro", sans-serif;
-    align-items: center;
-    text-align: center;
-    min-width: 320px;
-    letter-spacing: 0.1em;
+  .nav #menu:checked + ul {
+    display: flex;
   }
 }
 

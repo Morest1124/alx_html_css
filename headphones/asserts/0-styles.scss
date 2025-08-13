@@ -19,6 +19,7 @@ body {
 // Large screens
 @media screen and (min-width: 60rem) {
   body {
+    width: min(120rem, calc(85% + 100px));
     background-color: var(--back-color);
     font-family: "Source Sans Pro", sans-serif;
     padding: 1em;
@@ -58,6 +59,9 @@ body {
 
   #menu {
     display: none;
+    label {
+      display: none;
+    }
   }
 
   main {
@@ -109,9 +113,8 @@ body {
 }
 
 // Screens less than 1366 px
-@media screen and (min-width: 30rem) and (max-width: 80rem) {
+@media screen and (min-width: 30rem) {
   body {
-    max-width: 80rem;
     background-color: red;
     color: greenyellow;
     padding: 1em;
@@ -120,6 +123,46 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+  }
+
+  .nav {
+    color: snow;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    ul {
+      list-style-type: none;
+      display: flex;
+
+      li {
+        margin: 0.2em 0.8em;
+        display: inline-flex;
+        font-size: small;
+      }
+    }
+
+    a {
+      color: var(--button);
+      text-decoration: none;
+    }
+
+    ul a:hover {
+      color: var(--free_membership);
+    }
+  }
+  @media screen and (min-width: 768px) {
+    menu {
+      display: none;
+    }
+
+    .label {
+      display: none;
+      #menu {
+        display: none;
+      }
+    }
   }
 
   main {
@@ -132,13 +175,16 @@ body {
     align-items: center;
 
     h1 {
+      display: inline-flex;
       font-size: xx-large;
-      padding: 0px;
+      padding: 20px;
+      min-width: 30rem;
     }
 
     h2 {
       font-size: large;
       padding: 5px;
+      min-width: 30rem;
     }
 
     button {
@@ -170,44 +216,57 @@ body {
   }
 }
 
-// Small screens
-@media (max-width: 60rem) {
-  .nav {
+@media screen and (min-width: 48rem) {
+  body {
+    background-color: var(--back-color);
+    font-family: "Source Sans Pro", sans-serif;
+    padding: 1em;
+    margin: 1em 2em;
+    background-image: url(/images/headphones_hero_1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  nav {
+    color: snow;
     display: flex;
     flex-direction: row;
-    margin-left: 0;
-    margin-right: 0;
+    align-items: center;
+    justify-content: space-between;
 
     ul {
-      display: block;
+      list-style-type: none;
+      display: flex;
+
+      li {
+        margin: 0.3em 1em;
+        display: inline-flex;
+      }
     }
 
-    ul:last-child {
-      width: 100%;
-
-      ul li {
-        margin-bottom: 0;
-        width: 100%;
-        text-align: right;
-        padding: 0.5em;
-      }
-
-      #menu {
-        display: none;
-      }
+    a {
+      color: var(--button);
+      text-decoration: none;
     }
 
     ul a:hover {
       color: var(--free_membership);
-      transition: all;
-      transition-duration: 0.9ms;
+    }
+  }
+
+  .label_menu {
+    display: block;
+    #menu {
+      display: block;
     }
 
     main {
       display: flex;
       flex-direction: column;
-      margin: 50px;
-      margin-top: 80px;
+      color: var(--text-color);
+      margin: 200px;
+      margin-top: 350px;
       align-items: center;
 
       h1 {
@@ -223,7 +282,7 @@ body {
       button {
         color: var(--text-color);
         padding: 10px;
-        margin: 100px;
+        margin: 60px;
         margin-right: 20px;
         padding-right: 20px;
         background-color: var(--button);
@@ -235,111 +294,71 @@ body {
         &:hover {
           background-color: rgb(234, 234, 243);
           color: var(--button);
+          box-shadow: hsl(0, 20%, 96%);
           opacity: 0.9;
         }
       }
 
       p {
-        font-family: Georgia, "Times New Roman", Times, serif;
+        font-family: "Source Sans Pro", sans-serif;
         align-items: center;
         text-align: center;
         width: 630px;
         letter-spacing: 0.1em;
-        color: aqua;
       }
     }
   }
 }
-
-// Smallest screens
-@media screen and (min-width: 20rem) and (max-width: 30rem) {
+@media screen and (min-width: 20rem) and (max-width: 48rem) {
   body {
-    max-width: 30rem;
-    background-color: rgb(98, 255, 0);
-    color: rgb(168, 25, 229);
+    background-color: var(--back-color);
+    font-family: "Source Sans Pro", sans-serif;
     padding: 1em;
     margin: 1em 2em;
     background-image: url(/images/headphones_hero_1.jpg);
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
     background-repeat: no-repeat;
   }
 
-  nav {
+  .nav {
     display: flex;
-    flex-direction: column-reverse;
-    flex-wrap: wrap;
-    margin-left: 0;
-    margin-right: 0;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      display: flex;
+      flex-direction: row-reverse;
+      width: 100px;
+    }
+
+    .menu-icon {
+      display: block;
+      cursor: pointer;
+    }
 
     ul {
-      display: block;
-    }
-
-    ul:last-child {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      flex-basis: 100%;
+      background-color: var(--free_membership);
+      padding: 1em;
+
+      li {
+        margin-bottom: 0.5em;
+      }
+
+      li a {
+        font-size: small;
+        padding: 10px;
+      }
     }
 
-    ul li {
+    #menu:checked + ul {
       display: flex;
-      flex-direction: column-reverse;
-      margin-bottom: 0;
-      width: 100%;
-      text-align: right;
-      padding: 0.5em;
-    }
-
-    label {
-      text-align: right;
-      display: block;
-      padding: 0.5em;
-      line-height: 1.6em;
-      align-self: center;
-    }
-  }
-
-  input[type="checkbox"]:not(:checked) + ul {
-    display: none;
-  }
-
-  main {
-    color: var(--text-color);
-    margin: 200px;
-    margin-top: 350px;
-    align-items: center;
-
-    h1 {
-      font-size: xx-large;
-      padding: 0px;
-    }
-
-    h2 {
-      font-size: large;
-      padding: 5px;
-    }
-
-    button {
-      color: var(--text-color);
-      padding: 10px;
-      margin: 60px;
-      margin-right: 100px;
-      padding-right: 20px;
-      background-color: rgb(168, 25, 229);
-      border: 2px solid var(--button);
-      border-radius: 30px;
-      width: 150px;
-      text-align: center;
-      opacity: 0.9;
-    }
-
-    p {
-      font-family: "Source Sans Pro", sans-serif;
-      align-items: center;
-      text-align: center;
-      min-width: 320px;
-      letter-spacing: 0.1em;
     }
   }
 }

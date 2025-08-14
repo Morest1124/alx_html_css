@@ -2,7 +2,7 @@
 $back-color: white;
 $text-color: rgb(255, 255, 255);
 $button-color: hsl(0, 100%, 70%);
-$free-membership-color: greenyellow;
+$free-membership-color: rgb(6, 11, 26);
 
 // Global styles
 :root {
@@ -17,7 +17,7 @@ body {
 }
 
 // Large screens
-@media screen and (min-width: 60rem) {
+@media screen and (max-width: 62.5rem) {
   body {
     width: min(120rem, calc(85% + 100px));
     background-color: var(--back-color);
@@ -56,10 +56,14 @@ body {
       color: var(--free_membership);
     }
   }
-  .menu-toggle {
-    visibility: hidden;
+
+  .menu-container {
+    display: block;
+
     #menu {
-      transform: translateX(100%);
+      display: none;
+    }
+    .menu-toggle {
       visibility: hidden;
     }
   }
@@ -112,11 +116,8 @@ body {
   }
 }
 
-// Screens less than 1366 px
-@media screen and (min-width: 30rem) {
+@media screen and (min-width: 30rem) and (max-width: 62.5rem) {
   body {
-    background-color: var(--back-color);
-    color: var(--text-color);
     padding: 1em;
     margin: 1em 2em;
     background-image: url(/images/headphones_hero_1.jpg);
@@ -140,12 +141,14 @@ body {
         margin: 0.2em 0.8em;
         display: inline-flex;
         font-size: small;
+        margin-right: 15px;
       }
     }
 
     a {
       color: var(--button);
       text-decoration: none;
+      margin: 15px;
     }
 
     ul a:hover {
@@ -153,17 +156,14 @@ body {
     }
   }
   @media screen and (min-width: 768px) {
-    menu {
-      display: none;
-    }
-    .menu-toggle {
-      visibility: hidden;
-    }
-
     .menu-container {
       display: none;
       #menu {
         display: none;
+        visibility: hidden;
+      }
+      .menu-toggle {
+        visibility: hidden;
       }
     }
   }
@@ -219,7 +219,7 @@ body {
   }
 }
 
-@media screen and (min-width: 30rem) {
+@media screen and (min-width: 48rem) and (max-width: 62.5rem) {
   body {
     background-color: var(--back-color);
     font-family: "Source Sans Pro", sans-serif;
@@ -245,33 +245,28 @@ body {
     ul {
       list-style-type: none;
       display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      align-items: center;
 
       li {
-        display: inline-block;
-        margin: 0.3em 1em;
+        margin: 0.9em 1em;
         display: inline-flex;
-        line-height: 1.5;
-        font-size: max(1.2rem, 1.2vw);
-        font-size: clamp(1.8rem, 2.5vw, 2.8rem);
       }
     }
 
     a {
       color: var(--button);
       text-decoration: none;
-      font-size: small;
+      margin: 15px;
+    }
+
+    ul a:hover {
+      color: var(--free_membership);
     }
   }
-  .menu-toggle {
-    visibility: hidden;
-  }
+
   .menu-container {
     display: block;
     #menu {
-      display: block;
+      visibility: hidden;
     }
 
     main {
@@ -322,16 +317,24 @@ body {
     }
   }
 }
+
 @media screen and (min-width: 10rem) and (max-width: 30rem) {
   body {
-    background-color: var(--back-color);
+    .bg {
+      visibility: visible;
+      z-index: -1;
+    }
+    background-image: url(/images/headphones_hero_1.jpg);
+  }
+  #main {
+    background-color: transparent;
     font-family: "Source Sans Pro", sans-serif;
     padding: 1em;
     margin: 1em 2em;
-    background-image: url(/images/headphones_hero_1.jpg);
     background-position: 35%;
     background-size: cover;
     background-repeat: no-repeat;
+    scroll-behavior: smooth;
   }
 
   .nav {
@@ -339,16 +342,22 @@ body {
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
+
     .logo {
-      display: flex;
+      display: inline-block;
       flex-direction: row-reverse;
       width: 100px;
       position: sticky;
+      justify-content: center;
+      align-self: center;
     }
 
     .menu-icon {
       display: block;
       cursor: pointer;
+    }
+    .menu-toggle {
+      visibility: visible;
     }
 
     ul {
@@ -374,14 +383,14 @@ body {
     #menu:checked + ul {
       display: flex;
     }
+    transition-duration: 0.9ms;
   }
 
   main {
     display: flex;
     flex-direction: column;
     color: var(--text-color);
-
-    margin-top: 350px;
+    margin-top: 30px;
     text-align: center;
     align-items: center;
 

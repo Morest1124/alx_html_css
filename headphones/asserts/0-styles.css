@@ -2,7 +2,7 @@
   --back-color: white;
   --text-color: rgb(255, 255, 255);
   --button: hsl(0, 100%, 70%);
-  --free_membership: greenyellow;
+  --free_membership: rgb(6, 11, 26);
 }
 
 body {
@@ -94,10 +94,8 @@ body {
     letter-spacing: 0.1em;
   }
 }
-@media screen and (min-width: 30rem) {
+@media screen and (min-width: 30rem) and (max-width: 62.5rem) {
   body {
-    background-color: red;
-    color: greenyellow;
     padding: 1em;
     margin: 1em 2em;
     background-image: url(/images/headphones_hero_1.jpg);
@@ -120,16 +118,18 @@ body {
     margin: 0.2em 0.8em;
     display: inline-flex;
     font-size: small;
+    margin-right: 15px;
   }
   .nav a {
     color: var(--button);
     text-decoration: none;
+    margin: 15px;
   }
   .nav ul a:hover {
     color: var(--free_membership);
   }
 }
-@media screen and (min-width: 30rem) and (min-width: 768px) {
+@media screen and (min-width: 30rem) and (max-width: 62.5rem) and (min-width: 768px) {
   .menu-container {
     display: none;
   }
@@ -141,7 +141,7 @@ body {
     visibility: hidden;
   }
 }
-@media screen and (min-width: 30rem) {
+@media screen and (min-width: 30rem) and (max-width: 62.5rem) {
   main {
     display: flex;
     flex-direction: column;
@@ -187,7 +187,7 @@ body {
     letter-spacing: 0.1em;
   }
 }
-@media screen and (min-width: 48rem) {
+@media screen and (min-width: 48rem) and (max-width: 62.5rem) {
   body {
     background-color: var(--back-color);
     font-family: "Source Sans Pro", sans-serif;
@@ -205,17 +205,22 @@ body {
     align-items: center;
     justify-content: space-between;
   }
+  nav .logo {
+    width: 30%;
+    height: auto;
+  }
   nav ul {
     list-style-type: none;
     display: flex;
   }
   nav ul li {
-    margin: 0.3em 1em;
+    margin: 0.9em 1em;
     display: inline-flex;
   }
   nav a {
     color: var(--button);
     text-decoration: none;
+    margin: 15px;
   }
   nav ul a:hover {
     color: var(--free_membership);
@@ -304,6 +309,9 @@ body {
   .nav .menu-icon {
     display: block;
     cursor: pointer;
+  }
+  .nav .menu-toggle {
+    visibility: visible;
   }
   .nav ul {
     display: none;

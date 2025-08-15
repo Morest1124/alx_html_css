@@ -1,0 +1,306 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Center content under header-logo */
+.centered-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.main-content {
+  background-image: url("images/headphones_hero_1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100vh;
+  color: #ffff;
+  font-family: sans-serif;
+}
+
+.service-content-section {
+  text-align: center;
+  background: #fff;
+}
+
+.service-container {
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  margin: 30px 80px;
+  padding-bottom: 30px;
+  justify-content: space-around;
+}
+
+.service-heading {
+  color: black;
+  background-color: #ffff;
+  text-align: center;
+  margin-top: 35px;
+  padding: 25px;
+}
+
+.service-p {
+  margin-left: 390px;
+  margin-bottom: 95px;
+  font-weight: bold;
+  text-align: center;
+  width: 50%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  margin: 0 130px;
+}
+
+.header .header-logo {
+  display: flex;
+}
+
+.header ul li {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.header ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ffff;
+}
+
+.header ul li a:hover {
+  color: rgb(150, 29, 29);
+}
+
+.section-home {
+  display: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 150px;
+}
+
+.header ul {
+  display: flex;
+}
+
+.call-to-action-btn {
+  background-color: rgb(150, 29, 29);
+  color: #ffff;
+  font-weight: bold;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 25px;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+.section-home-p2 {
+  width: 550px;
+  margin: 35px auto 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hamburger menu and centered logo */
+.header-logo-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 200;
+}
+
+.burger span {
+  display: block;
+  width: 28px;
+  height: 4px;
+  margin: 4px 0;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (min-width: 30rem) and (max-width: 1000px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  .burger {
+    display: flex;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    visibility: hidden;
+  }
+  .header-logo {
+    margin: 0 auto;
+    position: relative;
+    z-index: 101;
+  }
+  .header ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    background: rgba(30, 30, 30, 0.98);
+    width: 90vw;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 12px 12px;
+    z-index: 100;
+    padding: 10px 0;
+  }
+  .header ul.show {
+    display: flex;
+  }
+  .header ul li {
+    margin: 10px 0;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 37.5rem) {
+  .header-logo {
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .header-logo-image {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .header .header-logo .header-name {
+    font-size: 1.1em;
+    margin-left: 0;
+    text-align: left;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 62.5rem) {
+  .header {
+    margin: 0 40px;
+  }
+  .section-home-p2 {
+    width: 80%;
+    margin-left: 10%;
+  }
+}
+
+@media (max-width: 62.5rem) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 10px;
+    padding: 10px;
+  }
+  .header-logo {
+    margin-bottom: 10px;
+  }
+  .header ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+  .header ul li {
+    margin: 5px 0;
+    width: 100%;
+  }
+  .section-home-p2 {
+    width: 95%;
+    margin-left: 2.5%;
+  }
+}
+
+@media (max-width: 37.5rem) {
+  body {
+    background-size: cover;
+    background-position: center;
+  }
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    margin: 0 2px;
+    padding: 5px;
+  }
+  .header-logo {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .header-logo-image {
+    width: 40px;
+    height: 40px;
+  }
+  .header .header-logo .header-name {
+    font-size: 1.2em;
+    margin-left: 0;
+    text-align: center;
+  }
+  .header ul {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+  }
+  .header ul li {
+    margin: 5px 0;
+    width: 100%;
+    text-align: center;
+  }
+  .section-home {
+    margin-top: 60px;
+    padding: 0 5px;
+  }
+  .section-home-p2 {
+    width: 100%;
+    margin-left: 0;
+    font-size: 0.95em;
+    padding: 0 5px;
+  }
+  .call-to-action-btn {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1em;
+  }
+}
